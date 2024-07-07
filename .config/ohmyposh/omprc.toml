@@ -1,0 +1,108 @@
+# Docs : https://ohmyposh.dev/docs
+final_space = true
+version = 2
+
+# LEFT TOP PROMPT
+[[blocks]]
+  type = "prompt"
+  alignment = "left"
+  newline = true
+
+  [[blocks.segments]]
+    type = "text"
+    style = "plain"
+    foreground = "p:os"
+    template = "󰣙"
+
+  [[blocks.segments]]
+    type = "path"
+    style = "plain"
+    foreground = "p:blue"
+
+    [blocks.segments.properties]
+      style = "agnoster_short"
+      folder_separator_icon = "/"
+      folder_icon ="..\uf07b .."
+      home_icon = "~"
+      max_depth = 4
+
+  [[blocks.segments]]
+    type = "git"
+    style = "plain"
+    background = "transparent"
+    templates = [
+      "<p:green>{{ .HEAD }}</>", # Branch name with icon
+      "<p:green>{{ if gt .Behind 0 }} ↓{{ end }}</>", # Arrow down if HEAD is behind
+      "<p:green>{{ if gt .Ahead 0 }} ↑{{ end }}</>", # Arrow up if HEAD is ahead 
+      "<p:yellow>{{ if .Staging.Changed }} {{ .Staging.String }}{{ end }}</>",
+      "<p:yellow>{{ if or (.Working.Deleted) (.Working.Modified) }} !{{ add .Working.Deleted .Working.Modified }}{{ end }}</>",
+      "<p:blue> ?{{ .Working.Untracked }}</>",
+    ]
+
+    [blocks.segments.properties]
+      fetch_status = true
+      branch_icon = " "
+
+[[blocks]]
+  type = "prompt"
+  alignment = "right"
+
+  [[blocks.segments]]
+    # Show python virtualenv if activated
+    type = "python"
+    style = "plain"
+    foreground = "p:os"
+    template = "{{ if .Venv }}<p:green> {{ .Venv }}</>{{ end }}"
+
+  [[blocks.segments]]
+    type = "executiontime"
+    style = "plain"
+    foreground = "p:lavender"
+    background = "transparent"
+    template = " {{ .FormattedMs }} 󰔛 "
+    
+    [blocks.segments.properties]
+      threshold = 2000
+      style = "austin"
+
+# LEFT BOTTOM PROMPT
+[[blocks]]
+  type = "prompt"
+  alignment = "left"
+  newline = true
+
+  [[blocks.segments]]
+    type = "text"
+    style = "plain"
+    # use red color if commands failed
+    foreground_templates = [
+      "{{ if gt .Code 0 }}p:red{{ end }}",
+      "{{ if eq .Code 0 }}p:green{{ end }}",
+    ]
+    template = "<p:os>╰─</>"
+
+# ONLY SHOW  INSTEAD OF COMPLETE PROMPT FOR PREVIOUS COMMANDS
+[transient_prompt]
+  foreground_templates = [
+    "{{ if gt .Code 0 }}p:red{{ end }}",
+    "{{ if eq .Code 0 }}p:green{{ end }}",
+  ]
+  background = "transparent"
+  template = " "
+
+# USE SAME PROMPT FOR MULTILINE
+[secondary_prompt]
+  foreground = "p:green"
+  background = "transparent"
+  template = " "
+
+[palette]
+os = "#ACB0BE"
+red = "#f38ba8"
+pink = "#F5C2E7"
+lavender = "#B4BEFE"
+blue = "#89B4FA"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+cyan = "#94e2d5"
+

@@ -1,0 +1,24 @@
+# Common
+chevron = " nf-fa-chevron_right \uf054"
+triangle = " nf-cod-triangle_right \ueb70"
+taco = "󰝢 nf-md-taco \udb81\udf62"
+tacos = " nf-fae-tacos \ue219"
+
+# Icons
+python = " nf-seti-python \ue606"
+jenkins = " nf-dev-jenkins \ue767"
+swift = " nf-seti-swift \ue699"
+
+# Star Wars
+deathstar1 = "󰣘  nf-md-death_star \udb82\udcd8"
+deathstar2 = "󰣙  nf-md-death_star_variant \udb82\udcd9"
+empire = "  nf-fa-ge \uf1d1"
+rebel = "  nf-fa-rebel \uf1d0"
+jedi1 = " nf-fa-jedi_order \uedd8"
+jedi2 = " nf-fa-jedi \ueecc"
+sith = " nf-fa-sith \ueddc"
+galactic_republic = " nf-fa-galactic_republic \uedd6"
+old_republic = " nf-fa-old_republic \uedda"
+galactic_senate = "  nf-fa-galactic_senate \uedd7"
+mandalorian = " nf-fa-mandalorian \uedd9"
+trade_federation = " nf-fa-trade_federation \ueddd"
