@@ -58,7 +58,7 @@ set backspace=indent,eol,start
 
 " PLUGINS ---------------------------------------------------------------- {{{
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/vim/.vim/plugged')
 
   Plug 'dense-analysis/ale'
 
@@ -74,7 +74,7 @@ call plug#end()
 " MAPPINGS --------------------------------------------------------------- {{{
 
 " Set the backslash as the leader key.
-let mapleader = '\'
+let mapleader = ' '
 
 " Press \\ to jump back to the last cursor position.
 nnoremap <leader>\ ``
