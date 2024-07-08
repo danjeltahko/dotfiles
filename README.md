@@ -1,11 +1,14 @@
 # My little Dot Friends
 
-This terminal configuration uses XDG Base Directory for a better structured
-terminal environemnt. I started looking at this when my $HOME directory started
-to get cluttered with folders and configuration files that didn't fit my window
-anymore. I also wanted to have all my configurations in one place with the possibility to easily edit and change anything as well as simplifing the proccess of getting started on a new machine.
+> WIP!
 
-## 1. Installation
+This terminal configuration utilizes the XDG Base Directory for a more organized and structured terminal environment. I started looking at this when my $HOME directory became cluttered with folders and configuration files that no longer fitted my window. So I decided to implement a more Linux-friendly experience for MacOS by centralizing all importatnt configurations in a single location, making them easy to edit and modify. Additionally, simplifying the process of setting up a new machine as well as keeping all my machines updated with any new changes.
+
+So I stumbled upon `stow`, which accoring to it's man page, is a symlink farm manager which takes distinct sets of software and/or data located in separate directories on the filesystem, and makes them all appear to be installed in a single directory tree. And to be honest, this was exactly what i've been looking for.
+
+> I followed an nvim tutorial a while ago which used the Catpuccin Theme, so sorry not sorry for having this whole shell configuration use that theme.. It kinda grew on me.
+
+## Installation
 
 ### 1. Install Homebrew
 ```bash
@@ -20,15 +23,6 @@ brew install zsh
 chsh -s $(which zsh)
 
 ```
-brew install stow
-brew install git
-brew install --cask alacritty
-brew install --cask font-fira-code-nerd-font
-brew install fzf
-brew install eza
-brew install zoxide 
-brew install bat
-brew install jandedobbeleer/oh-my-posh/oh-my-posh
 
 ## Install everything
 ```bash
