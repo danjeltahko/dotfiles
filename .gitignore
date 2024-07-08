@@ -1,1 +1,3 @@
 secrets.zsh
+.mypy_cache/
+lazy-lock.json
