@@ -10,22 +10,12 @@ So I stumbled upon `stow`, which accoring to it's man page, is a symlink farm ma
 
 ## Installation
 
-### 1. Install Homebrew
+### If MacOS, install Xcode Command Line Tools first.
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+xcode-select --install
 ```
 
+### Install Configuration
 ```bash
-# Install zsh
-brew install zsh
-
-# Change default login shell
-chsh -s $(which zsh)
-
-```
-
-## Install everything
-```bash
-# add the path for zshrc to /etc/zshrc
-sudo ./install.sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/danjeltahko/dotfiles/master/install.sh)"
 ```
