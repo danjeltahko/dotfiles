@@ -43,8 +43,9 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 
   # Clone dotfiles to repository if not same name already exists
   if [ ! -d "$DOTFILES_DIR" ]; then
-    echo -e "${GREEN}Cloning dotfiles repository..${NC}"
+    echo -e "${BLUE}==> ${WHITE}Cloning dotfiles repository..${NC}"
     git clone "$DOTFILES_REP" "$DOTFILES_DIR"
+    touch $DOTFILES_DIR/.config/zsh/secrets.zsh # add the secrets file
   else
     echo -e "${YELLOW}Dotfiles directory already exists in $HOME${NC}"
   fi
@@ -69,8 +70,17 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   
   echo -e "${BLUE}==> ${WHITE}Setting up the last configurations${NC}"
   bat cache --build # add themes to bat
-  # Source zshrc on startup
-  echo "Adding [ -f $HOME/.config/zsh/.zshrc ] to /etc/zshrc"
+  # Installing TPM
+  if [ ! -d "$DOTFILES_DIR/.config/tmux/plugins/tpm" ]; then
+    echo "${GREEN}Installing Tmux Plugin Manager${NC}"
+    git clone https://github.com/tmux-plugins/tpm $HOME/.config/tmux/plugins/tpm
+  fi
+  # Source configured zshrc on startup
+  if [[ -f "$HOME/.zshrc" ]]; then
+    # First rename existing zshrc so it doesn't get sourced
+    mv $HOME/.zshrc $HOME/.zshrc-bak
+  fi
+  echo "\nAdding [ -f $HOME/.config/zsh/.zshrc ] to /etc/zshrc"
   echo "So we can keep .zshrc in .config directory instead of \$HOME"
   echo '[ -f $HOME/.config/zsh/.zshrc ] && source $HOME/.config/zsh/.zshrc' | sudo tee -a /etc/zshrc > /dev/null
 
