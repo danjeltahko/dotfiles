@@ -20,14 +20,24 @@ xcode-select --install
 
 ## After installation 
 
-### Open up Alacritty
+### 1. Open up Alacritty
 The `.zshrc` configuration uses zinit as zsh plugin manager so when you open up a new terminal (Alacritty), it will automatically install all the plugins specified in `dotfiles/zinit/zinitrc.zsh`. Previously i used ***oh-my-zsh*** but in my opinion, it got too cluttered and slow. So i did some investigation and found this [zsh plugin manager benchmark](https://github.com/rossmacarthur/zsh-plugin-manager-benchmark). According to the benchmark, `sheldon` was the best option, but it didn't include zinits turbo mode which is significantly faster. Therefore, i chose zinit.
 
-### TMUX
+If you have a look in `$HOME/dotfiles/.config/zsh` you can find a `secrets.zsh` file where you can add your API keys and other secrets you frequently use with environment variables.
+
+Also, if you had a `.zshrc` in $HOME directory, that has now been renamed to `.zshrc-bak` so you can add your own configurations to `.zshrc` in dotfiles directory. This is just to ensure that the old configuration won't be sourced as well.
+
+### 2. Configure Git
+In $HOME/.config/git/config there are some configurations for setting up delta, but also my user name and email. So please change that to your own.
+
+### 3. Configure Tmux 
 With tmux installed we also need to install all the configured plugins, these can of course be modified in `dotfiles/.config/tmux/tmux.conf`.
 To start a new tmux session (the 'htmux' command will print out a cheatsheet), run:
 ```bash
 tmux new
 ```
-Once inside tmux, use the keybinding `ctrl+space I` to install the plugins.
-
+Once inside tmux you need to source the config file:
+```bash
+tmux source $HOME/.config/tmux/tmux.conf
+```
+When the config file is sourced, use keybinding `ctrl+space I` to install the plugins.
