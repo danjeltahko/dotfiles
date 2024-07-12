@@ -74,4 +74,3 @@ export TMUX_CONF="$XDG_CONFIG_HOME/tmux/tmux.conf"
 
 # ZOXIDE
 export _ZO_DATA_DIR="$XDG_DATA_HOME/ZOXIDE"
-

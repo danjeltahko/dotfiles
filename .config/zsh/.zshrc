@@ -26,9 +26,9 @@ export LANG=en_US.UTF-8 # Set language
 setopt autocd # Enable 'cd' without typing 'cd'
 
 # ZSH Configurations
-export ZSH="$XDG_CONFIG_HOME/zsh"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
-source $ZSH/secrets.zsh
+source $ZDOTDIR/secrets.zsh
 ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdumps-$ZSH_VERSION"
 
 # Zinit ZSH Plugin Manager init
@@ -36,7 +36,7 @@ source "$XDG_CONFIG_HOME/zinit/zinitrc.zsh"
 
 # Load completions
 autoload -Uz compinit
-if [[ -f $ZSH_COMPDUMP && $ZSH_COMPDUMP -ot $ZSH/.zshrc ]]; then
+if [[ -f $ZSH_COMPDUMP && $ZSH_COMPDUMP -ot $ZDOTDIR/.zshrc ]]; then
  rm -f $ZSH_COMPDUMP
 fi
 compinit -d $ZSH_COMPDUMP
@@ -57,7 +57,7 @@ setopt hist_ignore_dups # Not record duplicate entries
 setopt hist_find_no_dups # not find duplicate entires
 
 # Source all configs from utils
-for config_file ("$ZSH"/utils/*.zsh); do
+for config_file ("$ZDOTDIR"/utils/*.zsh); do
   source "$config_file"
 done
 
