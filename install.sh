@@ -20,7 +20,7 @@ echo -e "${BLUE}==> ${WHITE}Starting installation..${NC}"
 echo "Creating XDG directories"
 mkdir -p -v $HOME/.config
 mkdir -p -v $HOME/.local/share
-mkdir -p -v $HOME/.local/state
+mkdir -p -v $HOME/.local/state/zsh
 mkdir -p -v $HOME/.cache
 echo "XDG Base Directories created"
 
@@ -39,7 +39,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     echo -e "${YELLOW}Could not find Homebrew, installing..${NC}"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     eval "$(/opt/homebrew/bin/brew shellenv)"
-    pipx ensurepath # add pipx to path
   fi
 
   # Clone dotfiles to repository if not same name already exists

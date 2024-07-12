@@ -1,5 +1,8 @@
 # Environment Variables that or unsupported by XDG + others
 
+# set pipx installed programs on path
+export PATH="$PATH:$HOME/.local/bin"
+
 # AWS
 export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
 export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
@@ -39,6 +42,10 @@ export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
 # ncurses
 export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
+
+# npm 
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
 
 # rustup
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
