@@ -27,8 +27,15 @@ If you have a look in `$HOME/dotfiles/.config/zsh` you can find a `secrets.zsh` 
 
 Also, if you had a `.zshrc` in $HOME directory, that has now been renamed to `.zshrc-bak` so you can add your own configurations to `.zshrc` in dotfiles directory. This is just to ensure that the old configuration won't be sourced as well.
 
-### 2. Configure Git
-In `$HOME/.config/git/config` there are some configurations for setting up delta, but also my username and email. So please change that to your own.
+### 2. Configure Git & Open Neovim
+In `$HOME/.config/git/config` there are some configurations for setting up delta (prettier git diffs), but also my username and email. So please change that to your own.
+
+You could open it up with neovim to also install all the LSP's, so run:
+```bash
+# vim is alias for nvim
+vim $HOME/.config/git/config
+```
+When you've entered neovim you can type `:MasonInstallAll` which will install all the linters/formatters and LSPs. then change the credentials in the git config to your own.
 
 ### 3. Configure Tmux 
 With tmux installed we also need to install all the configured plugins, these can of course be modified in `dotfiles/.config/tmux/tmux.conf`.
