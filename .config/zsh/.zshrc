@@ -29,7 +29,7 @@ setopt autocd # Enable 'cd' without typing 'cd'
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
 source $ZDOTDIR/secrets.zsh
-ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdumps-$ZSH_VERSION"
+ZSH_COMPDUMP="$ZSH_CACHE_DIR/zcompdumps-$ZSH_VERSION"
 
 # Zinit ZSH Plugin Manager init
 source "$XDG_CONFIG_HOME/zinit/zinitrc.zsh"

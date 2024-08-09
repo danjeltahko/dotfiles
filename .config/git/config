@@ -2,6 +2,9 @@
   name = Daniel Tahko
   email = daniel.tahko@hotmail.com
 
+[init]
+  defaultBranch = "master"
+
 [include]
   path = ~/.config/git/themes/catppuccin.gitconfig
 

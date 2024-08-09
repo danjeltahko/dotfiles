@@ -10,6 +10,7 @@ brew "neovim"
 brew "npm"
 brew "pipx"
 brew "python"
+brew "ripgrep"
 brew "stow"
 brew "tailscale", restart_service: true
 brew "tmux"
