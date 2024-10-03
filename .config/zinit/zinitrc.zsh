@@ -30,6 +30,4 @@ zinit light Homebrew/homebrew-command-not-found
 
 # zsh snippets
 zinit ice wait lucid
-zinit snippet OMZP::git/git.plugin.zsh
-zinit ice wait lucid
 zinit snippet OMZP::docker/docker.plugin.zsh

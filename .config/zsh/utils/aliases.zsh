@@ -12,6 +12,16 @@ alias al="eza --across --icons --long --no-user --git -a"
 # Homebrew regular cleanup
 alias brewup='brew update; brew upgrade; brew cleanup'
 
+# Git
+alias g="git"
+alias gs="git status"
+alias ga="git add"
+alias gcm="git commit -m"
+alias gco="git checkout"
+alias gb="git branch"
+alias gl="git log"
+alias gd="git diff"
+
 # Nvim instead of vim
 alias vim='nvim'
 
