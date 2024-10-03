@@ -21,6 +21,7 @@ alias gco="git checkout"
 alias gb="git branch"
 alias gl="git log"
 alias gd="git diff"
+alias gp="git push"
 
 # Nvim instead of vim
 alias vim='nvim'
