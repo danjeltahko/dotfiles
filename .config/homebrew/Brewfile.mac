@@ -1,0 +1,29 @@
+brew "bat"
+brew "eza"
+brew "fzf"
+brew "git-delta"
+brew "jandedobbeleer/oh-my-posh/oh-my-posh"
+brew "jq"
+brew "lua"
+brew "lua-language-server"
+brew "neovim"
+brew "npm"
+brew "pipx"
+brew "python"
+brew "rust"
+brew "rustup-init"
+brew "ripgrep"
+brew "stow"
+brew "tmux"
+brew "tree"
+brew "zoxide"
+brew "neofetch"
+brew "xdg-ninja"
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
+brew "tailscale", restart_service: true
+brew tap heroku/brew && brew install heroku
+brew install --cask alacritty
+brew install --cask arc
+brew install --cask spotify
+brew install --cask google-chrome
