@@ -10,14 +10,23 @@ brew "neovim"
 brew "npm"
 brew "pipx"
 brew "python"
+brew "rust"
+brew "rustup-init"
 brew "ripgrep"
 brew "stow"
-brew "tailscale", restart_service: true
 brew "tmux"
 brew "tree"
 brew "zoxide"
 brew "neofetch"
 brew "xdg-ninja"
-cask "alacritty"
-cask "arc"
-cask "font-hack-nerd-font"
+
+if OS.mac?
+  brew tap homebrew/cask-fonts
+  brew install --cask font-hack-nerd-font
+  brew "tailscale", restart_service: true
+  brew tap heroku/brew && brew install heroku
+  brew install --cask alacritty
+  brew install --cask arc
+  brew install --cask spotify
+  brew install --cask google-chrome
+end
