@@ -27,7 +27,3 @@ zinit light MichaelAquilina/zsh-you-should-use
 
 zinit ice wait lucid
 zinit light Homebrew/homebrew-command-not-found
-
-# zsh snippets
-zinit ice wait lucid
-zinit snippet OMZP::docker/docker.plugin.zsh
