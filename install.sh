@@ -50,7 +50,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   brew upgrade
 
   # Install packages in Brewfile
-  if [[ -f "$BREWFILE" ]]; then
+  if [[ -f "$BREWFILE.linux" ]]; then
     echo -e "${BLUE}==> ${WHITE}Installing packages from Brewfile${NC}"
     brew bundle --file="$BREWFILE.linux"
   else
@@ -107,7 +107,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   brew upgrade
 
   # Install packages in Brewfile
-  if [[ -f "$BREWFILE" ]]; then
+  if [[ -f "$BREWFILE.mac" ]]; then
     echo -e "${BLUE}==> ${WHITE}Installing packages from Brewfile${NC}"
     brew bundle --file="$BREWFILE.mac"
   else
