@@ -52,7 +52,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   # Install packages in Brewfile
   if [[ -f "$BREWFILE" ]]; then
     echo -e "${BLUE}==> ${WHITE}Installing packages from Brewfile${NC}"
-    brew bundle --file="$BREWFILE".linux
+    brew bundle --file="$BREWFILE.linux"
   else
     echo -e "${RED}Brewfile not found at $BREWFILE ${NC}"
     exit 1
@@ -109,7 +109,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   # Install packages in Brewfile
   if [[ -f "$BREWFILE" ]]; then
     echo -e "${BLUE}==> ${WHITE}Installing packages from Brewfile${NC}"
-    brew bundle --file="$BREWFILE".mac
+    brew bundle --file="$BREWFILE.mac"
   else
     echo -e "${RED}Brewfile not found at $BREWFILE ${NC}"
     exit 1
