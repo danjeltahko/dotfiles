@@ -20,6 +20,11 @@ if [[ -f "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# Adding Linuxbrew related to PATH if Linux
+if [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 # General settings
 export EDITOR="nvim" # Set default editor to nvim
 export LANG=en_US.UTF-8 # Set language
@@ -83,6 +88,9 @@ fi
 }
 zle -N _sgpt_zsh
 bindkey '^g' _sgpt_zsh
+
+# Source RUST
+source "$XDG_CONFIG_HOME/cargo/env"
 
 # End timer if you want to benchmark (uncomment)
 # zsh_end_time=$EPOCHREALTIME
