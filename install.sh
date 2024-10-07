@@ -42,7 +42,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     git clone "$DOTFILES_REP" "$DOTFILES_DIR"
     touch $DOTFILES_DIR/.config/zsh/secrets.zsh # add the secrets file
   else
-    echo -e "${YELLOW}Dotfiles directory already exists in $HOME${NC}"
+    echo -e "${RED}Dotfiles directory already exists in $HOME${NC}"
+    exit 1
   fi
   
   # Update & Upgrade Brew
@@ -99,7 +100,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     git clone "$DOTFILES_REP" "$DOTFILES_DIR"
     touch $DOTFILES_DIR/.config/zsh/secrets.zsh # add the secrets file
   else
-    echo -e "${YELLOW}Dotfiles directory already exists in $HOME${NC}"
+    echo -e "${RED}Dotfiles directory already exists in $HOME${NC}"
+    exit 1
   fi
   
   # Update & Upgrade Brew
