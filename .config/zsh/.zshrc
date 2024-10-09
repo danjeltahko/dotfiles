@@ -90,7 +90,7 @@ zle -N _sgpt_zsh
 bindkey '^g' _sgpt_zsh
 
 # Source RUST
-source "$XDG_CONFIG_HOME/cargo/env"
+# source "$XDG_CONFIG_HOME/cargo/env"
 
 # End timer if you want to benchmark (uncomment)
 # zsh_end_time=$EPOCHREALTIME

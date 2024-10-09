@@ -1,5 +1,6 @@
 secrets.zsh
 .config/tmux/plugins/
 .mypy_cache/
+.vim/
 lazy-lock.json
-Brewfile.lock.json
+Brewfile.*.lock.json
